@@ -1,4 +1,5 @@
 import random
+import os
 
 passwords = {}
 
@@ -24,7 +25,9 @@ def view_password():
         print(f"Name : {pass_name} \nPassword : {passwords[pass_name]}")
 
 def save_password():
-    file = open("passwords.txt", "w")
+
+    full_path = os.path.join("password_manager","passwords.txt")
+    file = open(full_path, "w")
 
     for pass_name in passwords:
         file.write(f"{pass_name} : {passwords[pass_name]}")
