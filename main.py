@@ -10,6 +10,7 @@ def generate_password():
         string.digits + 
         string.punctuation
     )
+    password = "".join(random.choice(characters) for _ in range(16))
     print(f"Password Generated : {password}")                   
 
 def add_password():
