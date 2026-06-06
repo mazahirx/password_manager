@@ -1,14 +1,16 @@
 import random
+import string
 import os
 
 passwords = {}
 
 def generate_password():
-    generic_str = "AbcdefghIjklMnoPQrsTuvWxyZ"
-    generic_num = "1234567890"
-    generic_var = "$#@!&*"
-    password = random.choice(generic_str) + random.choice(generic_num) + random.choice(generic_var)
-    print(f"Password Generated : {password}")
+    characters = (
+        string.ascii_letters + 
+        string.digits + 
+        string.punctuation
+    )
+    print(f"Password Generated : {password}")                   
 
 def add_password():
     pass_name = input("Enter the name to store the password with : ")
